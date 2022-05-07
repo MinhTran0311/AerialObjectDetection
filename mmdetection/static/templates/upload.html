@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+
+<title>AERIAL IMAGE OBJECT DETECTION</title>
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  img {
+    max-width: 70%;
+  }
+  .image {
+    flex-basis: 10%;
+  }
+  .text {
+    font-size: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 0px;
+    text-align: center;
+    color: OldLace;
+  }
+  .title1 {
+    font-size: 15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 0px;
+    text-align: center;
+    color: OldLace;
+  }
+  .title2 {
+    font-size: 13px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 0px;
+    text-align: center;
+    color: OldLace;
+  }
+  .form {
+    position: relative;
+    align-items: center;
+    text-align: center;
+    padding: 10px 10px 0px 10px;
+    width: 100%;
+    bottom: 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .footer {
+    position: fixed;
+    width: 100%;
+    font-size: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    color: steelblue;
+  }
+</style>
+</head>
+<body style="background-color:MidnightBlue;">
+  <div class="container">
+    <div class="text">
+      <h1>VIETNAM NATIONAL UNIVERSITY, HO CHI MINH CITY<br>UNIVERSITY OF INFORMATION TECHNOLOGY<br></h1>
+    </div>
+  </div>
+  
+  <div class="title1">
+    <div class="title1">
+      <h1>GRADUATION THESIS</h1>
+    </div>
+    <div class="title2">
+      <h1>WEB DEMO AERIAL IMAGE OBJECT DETECTION</h1>
+    </div>
+  </div>
+
+  <p>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <p>
+        {% for message in messages %}
+        <li style="text-align: center;">{{ message }}</li>
+        {% endfor %}
+    </p>
+    {% endif %}
+    {% endwith %}
+  </p>
+
+  {% if filename %}
+    
+    <div class="video_feed" style="text-align: center;">
+      <div style="margin: 10px auto;">
+        <img src="{{ url_for('static', filename='out.jpg') }}" width="70%">
+      </div>
+    </div>
+
+  {% endif %}
+  
+  <div class="form">
+    <form method="post" action="/" enctype="multipart/form-data">
+      <input type = "file" name = "file" style="font-size: 15px;"/>
+      <input type = "submit" style="font-size: 15px;"/>
+    </form>
+  </div>
+  
+
+  <div class="footer" style="margin-top: 20px;">
+    <p style="text-align: center;"><i>@ Tran Tuan Minh - 18520314.</i></p>
+  </div>
+
+</html> 
