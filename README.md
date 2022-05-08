@@ -26,21 +26,34 @@ The repo is based on [MMDetection](https://github.com/open-mmlab/mmdetection) an
 ## Installation
 To get a local copy up and running follow these simple steps.
 ### Prerequisites
- 1. Clone the repo
+1. Environment
+- Server:
+	- Linux or macOS
+	- NVIDIA GeForce GTX 2080 Ti 11019MiB (recomended)
+	- Python 3.6+
+	- PyTorch 1.3+
+	- CUDA 9.2+ (If you build PyTorch from source, CUDA 9.0 is also compatible)
+	- GCC 5+
+	- [MMCV](https://mmcv.readthedocs.io/en/latest/#installation)
+- Client:
+	- [NodeJS (v12. or higher)](https://nodejs.org/en/)
+	- [Java SE Development Kit](https://openjdk.java.net/projects/jdk8/)
+	- [Flutter SDK (v2.10.0 or higher)](https://docs.flutter.dev/)
+- Clone the repo
 	   ```sh
 	   git clone https://github.com/MinhTran0311/HomiesRealEstate_name.git
 	   ```
 ### Server
 Our mobile app is based on **Mmdetection**
 1. Please refer to [INSTALL.md](https://mmdetection.readthedocs.io/en/v1.2.0/INSTALL.html) for installation.
- 2. Install Flask
+2. Install Flask
 	   ```cmd
 	   pip install Flask
 	   ```
 2. Run the server
 	 ```cmd
    cd mmdetection
-   CUDA_VISIBLE_DEVICES={{YOUR_GPU_DEIVCE_ID}} PORT={{PORT}} src.py
+   CUDA_VISIBLE_DEVICES={{YOUR_GPU_DEIVCE_ID}} python3 src.py
 	  ```
 ### Mobile Flutter
 Our mobile app is based on [Flutter Boilerplate](https://github.com/zubairehman/flutter-boilerplate-project).
@@ -53,10 +66,15 @@ Please refer to [README.md](https://github.com/zubairehman/flutter-boilerplate-p
    ```cmd
    flutter packages pub run build_runner build --delete-conflicting-outputs
    ```
-3. Run the App
+3. Change the IP address that match your server in [AerialObjectDetection\Mobile\lib\data\network\constants\endpoints.dart](https://github.com/MinhTran0311/AerialObjectDetection/blob/main/Mobile/lib/data/network/constants/endpoints.dart)
+   ```cmd
+    static const String baseUrl = "http://{{YOUR_SERVER_IP}}:3000/minh";
+   ```
+4. Run the App
 	```cmd
    flutter run
    ```
+5. User your physical device or Android Emulator to use the app.
 ### Web ReactJs
 1. Install required library
 	 ```cmd
@@ -65,7 +83,7 @@ Please refer to [README.md](https://github.com/zubairehman/flutter-boilerplate-p
 	  ```
 2. Create an .env file that contains
    ```cmd
-   REACT_APP_SERVER_URL=http://{{YOUR_IP_ADRESS}}:{{PORT}}/minh
+   REACT_APP_SERVER_URL=http://{{YOUR_SERVER_IP}}:3000/minh
    ```
 4. Run the App
   	```cmd
