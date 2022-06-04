@@ -17,7 +17,7 @@
     <a href="https://github.com/MinhTran0311/AerialObjectDetection/issues">Request Feature</a>
   </p>
 </p>
-<!-- ABOUT THE PROJECT -->
+
 ## Introduction
 
 This project provides an implementation for our thesis **"Object detection in foggy aerial images based on deep learning"**.
@@ -26,7 +26,6 @@ The repo is based on [MMDetection](https://github.com/open-mmlab/mmdetection) an
 ## Installation
 To get a local copy up and running follow these simple steps.
 ### Prerequisites
-1. Environment
 - Server:
 	- Linux or macOS
 	- NVIDIA GeForce GTX 2080 Ti 11019MiB (recomended)
