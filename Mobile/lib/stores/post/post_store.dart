@@ -6,6 +6,7 @@ import 'package:boilerplate/stores/error/error_store.dart';
 import 'package:boilerplate/utils/dio/dio_error_util.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mobx/mobx.dart';
+import 'dart:io';
 
 part 'post_store.g.dart';
 
@@ -72,7 +73,7 @@ abstract class _PostStore with Store {
   String? processingTime;
 
   @action
-  Future upload(XFile file) async {
+  Future upload(File file) async {
     final future = _repository.upload(file);
     fetchUploadFuture = ObservableFuture(future);
 

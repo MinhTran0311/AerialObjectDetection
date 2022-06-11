@@ -7,6 +7,7 @@ import 'package:boilerplate/models/post/post.dart';
 import 'package:boilerplate/models/post/post_list.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sembast/sembast.dart';
+import 'dart:io';
 
 import 'local/constants/db_constants.dart';
 import 'network/apis/posts/post_api.dart';
@@ -26,7 +27,7 @@ class Repository {
 
   // Post: ---------------------------------------------------------------------
 
-  Future<dynamic> upload(XFile file) async {
+  Future<dynamic> upload(File file) async {
     return await _postApi.upload(file).then((img) {
       return img;
     }).catchError((error) => throw error);
