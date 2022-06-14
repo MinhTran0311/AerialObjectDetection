@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:boilerplate/data/local/datasources/post/post_datasource.dart';
 import 'package:boilerplate/data/sharedpref/shared_preference_helper.dart';
@@ -7,7 +8,6 @@ import 'package:boilerplate/models/post/post.dart';
 import 'package:boilerplate/models/post/post_list.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sembast/sembast.dart';
-import 'dart:io';
 
 import 'local/constants/db_constants.dart';
 import 'network/apis/posts/post_api.dart';
